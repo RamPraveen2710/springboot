@@ -19,11 +19,24 @@ configurations {
 }
 
 dependencies {
+    // Spring Boot dependencies
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    // JUnit platform launcher for tests
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+    // ONNX Runtime for ML model integration
+    implementation 'com.microsoft.onnxruntime:onnxruntime:1.15.0'
+
+    // Checkstyle
     checkstyle 'io.spring.javaformat:spring-javaformat-checkstyle:0.0.28'
+
+    // Lombok for boilerplate code
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
 tasks.withType(Test) {
